@@ -1,0 +1,25 @@
+---
+- import_tasks: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- import_tasks: Debian.yml
+  when: ansible_os_family == "Debian"
+
+- import_tasks: config.yml
+  when: logstash_create_config
+
+- name: Reload systemd
+  systemd: daemon_reload=yes
+  ignore_errors: yes
+
+- name: Ensure Logstash started and enabled
+  service:
+    name: logstash
+    enabled: yes
+    state: started
+
+- import_tasks: "RMRedHat.yml"
+  when: ansible_os_family == "RedHat"
+
+- import_tasks: "RMDebian.yml"
+  when: ansible_os_family == "Debian"
