@@ -1,5 +1,5 @@
 
-- hosts: hostname
+- hosts: agent_hosts
   roles:
     - ansible-wazuh-agent
   vars:
