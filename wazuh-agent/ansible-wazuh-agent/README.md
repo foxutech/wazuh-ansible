@@ -38,16 +38,3 @@ The following is an example how this role can be used:
           port: 1515
           ssl_agent_ca: null
           ssl_auto_negotiate: 'no'
-
-License and copyright
----------------------
-
-WAZUH Copyright (C) 2017 Wazuh Inc. (License GPLv3)
-
-### Based on previous work from dj-wasabi
-
-  - https://github.com/dj-wasabi/ansible-ossec-server
-
-### Modified by Wazuh
-
-The playbooks have been modified by Wazuh, including some specific requirements, templates and configuration to improve integration with Wazuh ecosystem.
